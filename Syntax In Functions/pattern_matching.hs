@@ -61,4 +61,11 @@ calcBmis :: (RealFloat a) => [(a, a)] -> [a]
 calcBmis xs = [bmi w h| (w, h) <- xs]
     where bmi weight height = weight / height ^ 2
 
+--There's also a thing called as patterns. Those are a handy way of breaking something up according to a pattern and binding it to names whilst
+--keeping a reference to the whole thing. You do that by putting an @ in front of a pattern. For instance xs@(x:y:ys). This pattern will match
+--the same thing as x:y:ys but you can easily get the whole list via xs instead of x:y:ys.
+
+capital :: String -> String
+capital "" = "Empty string, whoops!"
+capital all@(x:xs) = "The first letter of " ++ all ++ " is " ++ [x]
 
