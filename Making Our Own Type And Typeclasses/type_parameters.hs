@@ -23,3 +23,5 @@ tellCar (Car {company = c, model = m, year = y}) = "This " ++ c ++ " " ++ m ++ "
 
 tellCar :: (Show a) => Car String String a -> String
 tellCar (Car {company = c, model = m, year = y}) = "This " ++ c ++ " " ++ m ++ " was made in " ++ show y
+
+--Don't put type constraints into data declarations even if it makes sense. You'll end up putting it in functions that need it anyway.
