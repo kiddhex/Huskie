@@ -26,3 +26,35 @@ instance Eq Suit where
 	_ == _ = False
 
 --because of the earlier mutual recursion this is the minimum of functions needed to define the whole.
+
+--Let's make this an instance of show by hand too:
+
+instance Show Suit where
+	show Spade = "Spades"
+	show Club = "Clubs"
+	show Diamond = "Diamonds"
+	show Heart = "Hearts"
+
+--By making the instance declaration by hand we can customize the type (by adding an s in this case)
+
+--You can also make typeclasses that are subclasses of other tcs. Here is the first part of Num:
+--class (Eq a) => Num a where
+
+--Since Maybe isn't a concrete type we can't write:
+--instance Maybe where
+
+--We write it out like so:
+--instance Eq (Maybe m) where
+--	Just x == Just y = x == y
+--	Nothing == Nothing = True
+--	_ == _ = False
+
+--However we're using Eq on the contents of Maybe's type parameter. So we have to add a class constraint
+instance (Eq m) => Eq (Maybe m) where
+	Just x == Just y = x == y
+	Nothing == Nothing = True
+	_ == _ = False
+
+--Most of the times:
+--Class constraints in class declarations are used to make a class a subclass of another tc.
+--Class constraints in instance declarations are used to express requirements of the contents of some type.
