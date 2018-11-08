@@ -1,6 +1,7 @@
+--using algebraic data types to implement our own list:
 data List a = Empty | Cons a (List a) deriving (Show, Read, Eq, Ord)
 
---or record syntax:
+--or if you're confused maybe record syntax is easier to understand:
 --data List a = Empty | Cons { listHead :: a, listTail :: List a} deriving (Show, Read, Eq, Ord)
 
 -- fixit:
