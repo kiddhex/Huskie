@@ -74,4 +74,5 @@ fromList' = foldr (\(k,v) acc -> Map.insert k v acc) Map.empty
 --supplied to it to decide what to do with them. 
 --13. insertWith is the equivalent
 
+--Should check ever map data type 
 
