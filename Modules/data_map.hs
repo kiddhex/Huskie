@@ -1,14 +1,16 @@
+import qualified Data.Map as M
+
 --Association lists (also called dictionaries) are lists that are used to store key-value pairs
 --where ordering doesn't matter. Eg. a phone directory:
 
 phoneBook =
-	[("sypha", "555-2938")
-	,("bonnie", "555-3232")
-	,("alucard", "555-5555")
-	,("leon", "555-5454")
-	,("richter", "395-5939")
-	,("nick", "293-4954")
-	]
+    [("sypha", "555-2938")
+    ,("bonnie", "555-3232")
+    ,("alucard", "555-5555")
+    ,("leon", "555-5454")
+    ,("richter", "395-5939")
+    ,("nick", "293-4954")
+    ]
 
 --Let's make a function that looks up some value given a key:
 
@@ -39,7 +41,7 @@ findKey key = foldr (\(k,v) acc -> if key == k then Just v else acc) Nothing
 --Because Data.Map exports functions that clash with the Prelude and Data.List ones, we'll do
 --a qualified import:
 
-import qualified Data.Map as Map
+-- import qualified Data.Map as Map
 
 --Here's a basic rundown of its functions:
 
@@ -57,8 +59,8 @@ import qualified Data.Map as Map
 
 --We can implement our own fromList using the empty map, insert and a fold:
 
-fromList' :: (Ord k) => [(k,v)] -> Map.Map k v
-fromList' = foldr (\(k,v) acc -> Map.insert k v acc) Map.empty
+fromList' :: (Ord k) => [(k,v)] -> M.Map k v
+fromList' = foldr (\(k,v) acc -> M.insert k v acc) M.empty
 
 --4. null checks if a map is empty.
 --5. size reports the size of a map
