@@ -1,5 +1,8 @@
 module Variables where
 
+price :: Int
+price = 1983
+
 documentationVersion :: String
 documentationVersion = "someRandomString"
 
