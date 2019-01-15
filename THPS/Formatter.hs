@@ -36,7 +36,7 @@ tabFormatter :: Int -> String -> String
 tabFormatter x y = tabConstantAdder $ insertZeros x 8 ++ insertZeros 0 15 ++ taaRegistryNum ++ billingCode ++ blankSpaces 2 ++ blankSpaces 10 ++ approvalCode ++ y ++ blankSpaces 4 ++ cardValidTo ++ transactionDateTime ++ insertZeros 0 3 ++ chargeAmountInCents ++ processingCode ++ countryCurrencyCode ++ sharePlanDataCode ++ providerId ++ providerLocation ++ providerContactInformation ++ terminalId ++ posDataCode ++ insertZeros 0 3 ++ insertZeros 0 12 ++ blankSpaces 3 ++ referenceNumber ++ blankSpaces 451
 
 taaFormatter :: Int -> String
-taaFormatter x = taaConstantAdder $ insertZeros x 8 ++ transactionOutputId ++ blankSpaces 2 ++ attachmentTypeCode ++ locationName ++ locationAddress ++ locationCity ++ regionCode ++ countryCode ++ zipCode ++ blankSpaces 4 ++ blankSpaces 548
+taaFormatter x = taaConstantAdder $ insertZeros x 8 ++ transactionOutputId ++ insertZeros 0 2 ++ attachmentTypeCode ++ locationName ++ locationAddress ++ locationCity ++ regionCode ++ countryCode ++ zipCode ++ blankSpaces 4 ++ blankSpaces 548
 
 insertTfhHeader :: String -> String
 insertTfhHeader string = tfhConstantAdder $ firstLineNumber ++ emitterId ++ blankSpaces 21 ++ documentId ++ "000000000" ++ transactionDateTime ++ documentationVersion ++ blankSpaces 617 ++ string
