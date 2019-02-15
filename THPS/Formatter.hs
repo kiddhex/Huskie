@@ -30,7 +30,7 @@ tbtConstantAdder :: String -> String
 tbtConstantAdder x = "TBT" ++ x
 
 getFileName :: String
-getFileName = "filename" ++ transactionDate ++ "_" ++ transactionTime ++ ".TXT"
+getFileName = prefix ++ transactionDate ++ "_" ++ transactionTime ++ ".TXT"
 
 tabFormatter :: Int -> String -> String
 tabFormatter x y = tabConstantAdder $ insertZeros x 8 ++ insertZeros 0 15 ++ taaRegistryNum ++ billingCode ++ blankSpaces 2 ++ blankSpaces 10 ++ approvalCode ++ y ++ blankSpaces 4 ++ cardValidTo ++ transactionDateTime ++ insertZeros 0 3 ++ chargeAmountInCents ++ processingCode ++ countryCurrencyCode ++ sharePlanDataCode ++ providerId ++ providerLocation ++ providerContactInformation ++ terminalId ++ posDataCode ++ insertZeros 0 3 ++ insertZeros 0 12 ++ blankSpaces 3 ++ referenceNumber ++ blankSpaces 451

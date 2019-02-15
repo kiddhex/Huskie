@@ -21,6 +21,9 @@ cardValidTo = "someRandomString"
 documentId :: String
 documentId = "someRandomString"
 
+prefix :: String
+prefix = "filename"
+
 transactionDateTime :: String
 transactionDateTime = "someRandomString"
 

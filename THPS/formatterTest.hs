@@ -1,7 +1,7 @@
 import Formatter
 
 runTests :: Bool
-runTests = transactionDateTimeTest && documentIdTest && transactionDateTest && transactionOutputIdLengthTest && secondToLastLineNumberLengthTest && numberOfTransactionsTest && transactionDateLengthTest && tbtTotalLengthTest && lastLineNumberTest && creditTotalTest && totalCreditLengthTest && testGrandTotalLength && documentationVersionTest && testLocationName && locationAddressTest && locationCityTest && regionCodeTest && countryCodeTest && testReferenceNumber && zipCodeTest && tfhHeaderLengthTest && bodyFormatterTest && tbtFooterLengthTest && tabFormatterLengthTest && taaFormatterLengthTest && tfsFooterLengthTest
+runTests = transactionDateTimeTest && prefixTest && documentIdTest && transactionDateTest && transactionOutputIdLengthTest && secondToLastLineNumberLengthTest && numberOfTransactionsTest && transactionDateLengthTest && tbtTotalLengthTest && lastLineNumberTest && creditTotalTest && totalCreditLengthTest && testGrandTotalLength && documentationVersionTest && testLocationName && locationAddressTest && locationCityTest && regionCodeTest && countryCodeTest && testReferenceNumber && zipCodeTest && tfhHeaderLengthTest && bodyFormatterTest && tbtFooterLengthTest && tabFormatterLengthTest && taaFormatterLengthTest && tfsFooterLengthTest
 
 documentationVersionTest :: Bool
 documentationVersionTest = (length documentationVersion) == 8
@@ -32,6 +32,9 @@ bodyFormatterTest = (length $ bodyFormatter (3, "3")) == 1386
 
 documentIdTest :: Bool
 documentIdTest = length documentId == 9
+
+prefixTest :: Bool
+prefixTest = length prefix == 21
 
 creditTotalTest :: Bool
 creditTotalTest = length creditTotal == 8
